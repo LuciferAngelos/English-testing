@@ -1,153 +1,153 @@
 export const questions = [
     {
-        q1: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Fuga rerum libero dicta veniam tenetur sunt!'
+        '1': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Fuga rerum libero dicta veniam tenetur sunt!'
     },
     {
-        q2: 'Repellat voluptas fugit harum consequuntur voluptatibus quis ratione repellendus, ex nobis'
+        '2': 'Repellat voluptas fugit harum consequuntur voluptatibus quis ratione repellendus, ex nobis'
     },
     {
-        q3: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '3': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q4: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '4': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q5: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '5': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q6: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '6': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q7: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '7': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q8: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '8': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q9: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '9': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q10: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '10': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q11: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '11': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q12: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '12': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q13: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '13': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q14: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '14': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q15: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '15': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q16: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '16': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q17: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '17': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q18: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '18': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q19: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '19': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q20: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '20': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q21: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '21': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q22: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '22': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q23: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '23': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q24: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '24': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q25: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '25': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q26: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '26': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q27: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '27': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q28: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '28': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q29: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '29': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q30: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '30': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q31: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '31': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q32: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '32': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q33: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '33': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q34: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '34': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q35: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '35': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q36: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '36': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q37: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '37': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q38: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '38': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q39: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '39': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q40: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '40': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q41: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '41': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q42: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '42': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q43: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '43': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q44: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '44': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q45: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '45': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q46: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '46': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q47: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '47': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     },
     {
-        q48: 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '48': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
     },
     {
-        q49: 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. Porro architecto vel assumenda id. Obcaecati porro eius, dolorem magni suscipit nostrummsaepe dolores inventore'
+        '49': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
     },
     {
-        q50: 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '50': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
     }
 
 ]

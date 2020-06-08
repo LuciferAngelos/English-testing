@@ -368,10 +368,11 @@ p.question{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 1em;
 }
 .answers div{
     width: 50%;
-    max-height: 100px;
+    min-height: 75px;
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -384,8 +385,9 @@ input[type='radio'], label{
     line-height: 18px;
 }
 label{
-    width: 100%;
+    width: 90%;
     word-wrap: wrap;
+    min-height: 75px;
     font-family: var(-ff);
     font-size: 16px;
     padding: 3px;
