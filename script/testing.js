@@ -68,6 +68,24 @@ document.addEventListener('DOMContentLoaded', function () {
         questionsWrapper.insertAdjacentHTML('beforeend', questionBlock)
     }
 
+    function checkButtons() {
+        if (counter >= 0 && counter <= 40) {
+            nextButton.style.display = 'block';
+        } else {
+            nextButton.style.display = 'none';
+        }
+        if (counter > 19) {
+            prevButton.style.display = 'block';
+        } else {
+            prevButton.style.display = 'none';
+        }
+        if (counter == 50) {
+            toResults.style.display = 'block';
+        } else {
+            toResults.style.display = 'none';
+        }
+    }
+
     function renderQuestions() {
         for (let i = counter; i < counter + 10; i++) {
             if (counter > 40) return;
@@ -77,21 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
         counter += 10;
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].style.display = 'none';
-            if (counter >= 0 || counter < 40) {
-                nextButton.style.display = 'block';
-            } else {
-                nextButton.style.display = 'none';
-            }
-            if (counter > 19) {
-                prevButton.style.display = 'block';
-            } else {
-                prevButton.style.display = 'none';
-            }
-            if (counter == 50) {
-                toResults.style.display = 'block';
-            } else {
-                toResults.style.display = 'none';
-            }
+            checkButtons()
         }
     }
 
@@ -108,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 drawedQuestions[i].style.display = 'flex';
             }
             counter += 10;
+            checkButtons()
         } else {
             renderQuestions()
         }
@@ -118,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     prevButton.addEventListener('click', function () {
         counter -= 10;
+        checkButtons()
         let drawedQuestions = document.querySelectorAll('.question-block');
         for (let i = counter; i < drawedQuestions.length; i++) {
             drawedQuestions[i].style.display = 'none';
