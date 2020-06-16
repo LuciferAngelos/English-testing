@@ -12,6 +12,7 @@ const nextButton = document.querySelector('#nextPage'),
 let input = document.querySelector('#getName');
 let answers = [];
 let result = '';
+let totalAnswers = [];
 
 
 function getRandomDatas(arr1, arr2) {
@@ -24,13 +25,13 @@ function getRandomDatas(arr1, arr2) {
 }
 
 function addNewQuestionBlock(question, variant, techNum) {
-    let questionCount = '';
+    let questionCount;
     let q = '';
     let v = [];
     let c = [];
 
     for (let k in question) {
-        questionCount = k;
+        questionCount = +k;
         q = question[k];
         for (let key in variant) {
             v.push(variant[key])
@@ -44,22 +45,22 @@ function addNewQuestionBlock(question, variant, techNum) {
                 <form class="answers">
                     <div>
                         <label for="answer-${techNum}">
-                            <input type="radio" id='answer-${techNum}' name='question-${questionCount + 1}' data-c=${getRandomDatas(c, v)}
+                            <input type="radio" id='answer-${techNum}' name='question-${questionCount}' data-c=${getRandomDatas(c, v)}
                         </label>
                     </div>
                     <div>
                         <label for="answer-${techNum + 1}">
-                            <input type="radio" id='answer-${techNum + 1}' name='question-${questionCount + 1}' data-c=${getRandomDatas(c, v)}
+                            <input type="radio" id='answer-${techNum + 1}' name='question-${questionCount}' data-c=${getRandomDatas(c, v)}
                         </label>
                     </div>
                     <div>
                         <label for="answer-${techNum + 2}">
-                            <input type="radio" id='answer-${techNum + 2}' name='question-${questionCount + 1}' data-c=${getRandomDatas(c, v)}
+                            <input type="radio" id='answer-${techNum + 2}' name='question-${questionCount}' data-c=${getRandomDatas(c, v)}
                         </label>
                     </div>
                     <div>
                         <label for="answer-${techNum + 3}">
-                            <input type="radio" id='answer-${techNum + 3}' name='question-${questionCount + 1}' data-c=${getRandomDatas(c, v)}
+                            <input type="radio" id='answer-${techNum + 3}' name='question-${questionCount}' data-c=${getRandomDatas(c, v)}
                         </label>
                     </div>
                 </form>
@@ -114,9 +115,11 @@ function prevQuestions() {
 
 function nextQuestions() {
     let drawedQuestions = document.querySelectorAll('.question-block');
+
     for (let i = 0; i < drawedQuestions.length; i++) {
         drawedQuestions[i].style.display = 'none';
     }
+
     if (drawedQuestions.length > counter + 1) {
         for (let i = counter; i < counter + 10; i++) {
             drawedQuestions[i].style.display = 'flex';
@@ -126,6 +129,55 @@ function nextQuestions() {
     } else {
         renderQuestions()
     }
+}
+
+function checkRadios() {
+    let getQuestionBlocks = document.querySelectorAll('.question-block');
+
+    for (let i = 0; i < getQuestionBlocks.length; i++) {
+        let variantsForQuestion = getQuestionBlocks[i].querySelectorAll('input[type=radio]');
+        let variantsForQuestionChecked = getQuestionBlocks[i].querySelectorAll('input[type=radio]:checked');
+        let labelsForQuestion = getQuestionBlocks[i].querySelectorAll('label');
+        let questionFromQuestionBlocks = getQuestionBlocks[i].querySelector('.question');
+
+        for (let j = 0; j < variantsForQuestion.length; j++) {
+            if (!variantsForQuestion.checked && variantsForQuestionChecked.length < 1) {
+                labelsForQuestion[j].classList.add('uncheckedToggle');
+                questionFromQuestionBlocks.classList.add('uncheckedToggle');
+
+                setTimeout(function () {
+                    labelsForQuestion[j].classList.remove('uncheckedToggle');
+                    questionFromQuestionBlocks.classList.remove('uncheckedToggle');
+                }, 1000);
+            }
+        }
+        ;
+
+    }
+}
+
+function forwardOrWarn() {
+    let getAllQuestionBlocksLength = document.querySelectorAll('.question-block').length;
+    let getAllRadioButtons = document.querySelectorAll('input[type=radio]');
+    let checkedAll = 0;
+
+    for (let i = 0; i < getAllRadioButtons.length; i++) {
+        if (!getAllRadioButtons[i].checked) {
+            checkedAll;
+        } else {
+            checkedAll += 1;
+        }
+    }
+
+    if (checkedAll == getAllQuestionBlocksLength) {
+        nextQuestions();
+    } else {
+        checkRadios();
+        console.log(getAllRadioButtons.length);
+
+    }
+    console.log(checkedAll, getAllQuestionBlocksLength);
+
 }
 
 function countCorrectAnswers(arr) {
@@ -144,16 +196,43 @@ function getResults() {
     }
     if (countCorrectAnswers(answers) <= 10) {
         result += 'low';
+        localStorage.setItem('result', result);
     }
     if (countCorrectAnswers(answers) > 10 && countCorrectAnswers(answers) <= 30) {
         result += 'medium';
+        localStorage.setItem('result', result);
     }
     if (countCorrectAnswers(answers) > 40) {
         result += 'high';
+        localStorage.setItem('result', result);
     }
 
-    console.log(result);
+    getQuestionsAndAnswers();
 }
+
+function getQuestionsAndAnswers() {
+    let radioButtons = document.querySelectorAll('input[type=radio]');
+    let questions = document.querySelectorAll('.question');
+    let answersCounter = 0;
+
+
+    for (let i = 0; i < questions.length; i++) {
+        totalAnswers.push([]);
+        totalAnswers[i].push(questions[i].textContent)
+        totalAnswers[i].push([]);
+
+        for (let k = answersCounter; k < answersCounter + 4; k++) {
+            if (radioButtons[k].checked) {
+                totalAnswers[i][1].push(radioButtons[k].dataset.c.trim(''));
+            }
+            answersCounter += 4;
+            break;
+        }
+    }
+
+    console.log(totalAnswers);
+}
+
 
 renderQuestions()
 
@@ -181,10 +260,15 @@ if (!localStorage.getItem('name')) {
 }
 
 
-nextButton.addEventListener('click', nextQuestions);
+nextButton.addEventListener('click', forwardOrWarn);
 prevButton.addEventListener('click', prevQuestions);
 toResults.addEventListener('click', getResults)
 
 
 
 export { getResults }
+
+let a = [{ 'hello': 123 }, { 123: "ifoigo" }]
+localStorage.setItem('sdf', JSON.stringify(a))
+
+console.log(JSON.parse(localStorage.getItem('sdf')));

@@ -472,5 +472,9 @@ input{
     display: block;
 }
 
-
 /* *** */
+
+/* Toggle classes*/
+.uncheckedToggle{
+    color: red;
+}
