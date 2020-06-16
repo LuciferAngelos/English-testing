@@ -169,11 +169,39 @@ function forwardOrWarn() {
         }
     }
 
-    if (checkedAll == getAllQuestionBlocksLength) {
-        nextQuestions();
+    if (checkedAll == getAllQuestionBlocksLength || getAllQuestionBlocksLength == 50) {
+        nextQuestions()
     } else {
         checkRadios();
     }
+
+
+
+    // nextQuestions(); //удалить после отладки выгрузки в локал сторейдж
+}
+
+function toResultsOrWarn() {
+    let getAllQuestionBlocksLength = document.querySelectorAll('.question-block').length;
+    let getAllRadioButtons = document.querySelectorAll('input[type=radio]');
+    let checkedAll = 0;
+
+    for (let i = 0; i < getAllRadioButtons.length; i++) {
+        if (!getAllRadioButtons[i].checked) {
+            checkedAll;
+        } else {
+            checkedAll += 1;
+        }
+    }
+
+    if (checkedAll == getAllQuestionBlocksLength) {
+        getQuestionsAndAnswers()
+    } else {
+        checkRadios();
+    }
+
+
+
+    // nextQuestions(); //удалить после отладки выгрузки в локал сторейдж
 }
 
 function countCorrectAnswers(arr) {
@@ -203,7 +231,7 @@ function getResults() {
         localStorage.setItem('result', result);
     }
 
-    getQuestionsAndAnswers();
+    toResultsOrWarn();
 }
 
 function getQuestionsAndAnswers() {
@@ -220,9 +248,9 @@ function getQuestionsAndAnswers() {
         for (let k = answersCounter; k < answersCounter + 4; k++) {
             if (radioButtons[k].checked) {
                 totalAnswers[i][1].push(radioButtons[k].dataset.c.trim(''));
+                break;
             }
             answersCounter += 4;
-            break;
         }
     }
 
