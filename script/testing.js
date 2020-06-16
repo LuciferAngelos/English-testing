@@ -173,11 +173,7 @@ function forwardOrWarn() {
         nextQuestions();
     } else {
         checkRadios();
-        console.log(getAllRadioButtons.length);
-
     }
-    console.log(checkedAll, getAllQuestionBlocksLength);
-
 }
 
 function countCorrectAnswers(arr) {
