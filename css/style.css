@@ -42,7 +42,6 @@ header{
     background: linear-gradient(90deg, rgb(1, 22, 13) 0%, rgba(163,230,179,0.21081936192445727) 35%, rgba(0,212,255,1) 100%);
     padding: 10px 0;
     flex: 0 0 auto;
-    margin-bottom: 20px;
 }
 .goodwin-site, .atm-site{
     width: 15%;
@@ -133,6 +132,12 @@ main{
 ul{
     height: auto;
     margin-top: 10px;
+}
+#after{
+    font-family: var(--ff);
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 5px;
 }
 .first-ul:before{
     content: '';
