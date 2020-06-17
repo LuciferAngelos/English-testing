@@ -35,7 +35,7 @@ function addNewQuestionBlock(question, variant, techNum) {
         q = question[k];
         for (let key in variant) {
             v.push(variant[key])
-            c.push(key)
+            c.push(key.trim(''))
         }
     }
 
@@ -198,10 +198,6 @@ function toResultsOrWarn() {
     } else {
         checkRadios();
     }
-
-
-
-    // nextQuestions(); //удалить после отладки выгрузки в локал сторейдж
 }
 
 function countCorrectAnswers(arr) {
@@ -243,22 +239,21 @@ function getQuestionsAndAnswers() {
     for (let i = 0; i < questions.length; i++) {
         totalAnswers.push([]);
         totalAnswers[i].push(questions[i].textContent)
-        totalAnswers[i].push([]);
 
         for (let k = answersCounter; k < answersCounter + 4; k++) {
             if (radioButtons[k].checked) {
-                totalAnswers[i][1].push(radioButtons[k].dataset.c.trim(''));
-                break;
+                totalAnswers[i].push(radioButtons[k].dataset.c);
+                answersCounter += 4;
+                break
             }
-            answersCounter += 4;
         }
     }
 
-    console.log(totalAnswers);
+    localStorage.setItem('QuestionsAndAnswers', JSON.stringify(totalAnswers))
 }
 
 
-renderQuestions()
+renderQuestions();
 
 if (!localStorage.getItem('name')) {
     let warnModal = document.querySelector('.warn');
@@ -286,13 +281,4 @@ if (!localStorage.getItem('name')) {
 
 nextButton.addEventListener('click', forwardOrWarn);
 prevButton.addEventListener('click', prevQuestions);
-toResults.addEventListener('click', getResults)
-
-
-
-export { getResults }
-
-let a = [{ 'hello': 123 }, { 123: "ifoigo" }]
-localStorage.setItem('sdf', JSON.stringify(a))
-
-console.log(JSON.parse(localStorage.getItem('sdf')));
+toResults.addEventListener('click', getResults);
