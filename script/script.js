@@ -4,6 +4,10 @@ let cancel = document.querySelector('#cancel');
 let accept = document.querySelector('#accept');
 let backToNameInput = document.querySelector('#back-to-input');
 
+if (localStorage.getItem('name')) {
+    input.value = localStorage.getItem('name');
+}
+
 function clearInput() {
     name = '';
     input.value = null
