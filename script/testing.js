@@ -215,15 +215,15 @@ function getResults() {
         }
     }
     if (countCorrectAnswers(answers) <= 10) {
-        result += 'low';
+        result += '0';
         localStorage.setItem('result', result);
     }
     if (countCorrectAnswers(answers) > 10 && countCorrectAnswers(answers) <= 30) {
-        result += 'medium';
+        result += '1';
         localStorage.setItem('result', result);
     }
     if (countCorrectAnswers(answers) > 40) {
-        result += 'high';
+        result += '2';
         localStorage.setItem('result', result);
     }
 

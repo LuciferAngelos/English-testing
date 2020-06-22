@@ -3,6 +3,8 @@
 /* main page */
 :root{
     --ff: 'Roboto', sans-serif;
+    --cr: #e01507;
+    --cg: #07b034;
 }
 
 *{
@@ -19,6 +21,7 @@ textarea {resize:none;}
 textarea {resize:vertical;}
 textarea {resize:horizontal;}
 body{
+    overflow-x: hidden;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -145,7 +148,7 @@ ul{
 }
 li{
     height: auto;
-    font-family: var(-ff);
+    font-family: var(--ff);
     font-size: 18px;
     padding-left: 20px;
     margin-bottom: 10px;
@@ -169,7 +172,7 @@ h1{
 }
 .text-description{
     height: auto;
-    font-family: var(-ff);
+    font-family: var(--ff);
     text-align: center;
     font-size: 24px;
     margin-top: 10px;
@@ -210,7 +213,7 @@ span.text-selection-bold{
 }
 h2{
     height: auto;
-    font-family: var(-ff);
+    font-family: var(--ff);
     font-size: 24px;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -222,7 +225,7 @@ input[type='text']{
     border: none;
     text-align: center;
     background-color: #f5faff;
-    font-family: var(-ff);
+    font-family: var(--ff);
     font-size: 24px;
     
 }
@@ -245,7 +248,7 @@ input[type='text']:focus{
     border-radius: 5px;
     border: none;
     background-color: rgba(148, 207, 255, 0.3);
-    font-family: var(-ff);
+    font-family: var(--ff);
     font-size: 18px;
 }
 .buttons button:hover{
@@ -277,7 +280,7 @@ input[type='text']:focus{
 }
 h3{
     height: auto;
-    font-family: var(-ff);
+    font-family: var(--ff);
     font-size: 36px;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -296,7 +299,7 @@ h3{
     border-radius: 5px;
     border: none;
     background-color: rgba(148, 207, 255, 0.3);
-    font-family: var(-ff);
+    font-family: var(--ff);
     font-size: 24px;
 }
 .buttons-1 button:hover{
@@ -364,13 +367,12 @@ footer div{
     flex-direction: column;    
     justify-content: start;
     align-items: flex-start;
-    /* border: 2px solid red; */
 }
 p.question{
     width: 100%;
     min-height: 90px;
-    font-family: var(-ff);
-    font-size: 18px;
+    font-family: var(--ff);
+    font-size: 1.1em;
     text-align: justify;
 }
 .answers{
@@ -398,8 +400,8 @@ label{
     width: 90%;
     word-wrap: wrap;
     min-height: 30px;
-    font-family: var(-ff);
-    font-size: 16px;
+    font-family: var(--ff);
+    font-size: 1em;
     padding: 3px;
 }
 input[type='radio']{
@@ -423,7 +425,7 @@ input[type='radio']{
     border-radius: 5px;
     border: 1px solid rgba(16, 2, 143, .2);
     background-color: rgba(148, 207, 255, 0.3);
-    font-family: var(-ff);
+    font-family: var(--ff);
     font-size: 24px;
     transition: .3s linear;
 }
@@ -480,7 +482,7 @@ input[type='radio']{
     border-radius: 5px;
     border: none;
     background-color: rgba(4, 95, 170, 0.24);
-    font-family: var(-ff);
+    font-family: var(--ff);
     font-size: 20px;
     margin-top: 5px;
     transition: .3s linear;
@@ -494,14 +496,178 @@ input[type='radio']{
 
 /* *** */
 
-/* Toggle classes*/
+/* Toggle classes and animation*/
 .uncheckedToggle{
-    color: red;
+    color: var(--cr);
 }
-
+.markAsRed{
+    color: var(--cr);
+}
+.markAsGreen{
+    color: var(--cg);
+}
+.toggleDisplay{
+    display: none;
+}
+@keyframes slideRight{
+    from{
+        display: flex;
+        transform: translate(0);
+    }
+    to{
+        display: none;
+        transform: translate(150%);
+    }
+}
+@keyframes slideLeft{
+    from{
+        display: flex;
+        transform: translate(0);
+    }
+    to{
+        display: none;
+        transform: translate(-150%);
+    }
+}
+@keyframes slideTop{
+    from{
+        display: flex;
+        transform: translate(0);
+    }
+    to{
+        display: none;
+        transform: translateY(-650%);
+    }
+}
+.slideToLeft{
+    animation: slideLeft 2s ease-in;
+}
+.slidetoRight{
+    animation: slideRight 1.5s ease-in;
+}
+.slideToTop{
+    animation: slideTop 1.5s ease-in;
+}
 /* *** */
 
 /* Results page */
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.resolution{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.image-result, .description-result{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.current-image img{
+    width: 55%;
+    height: 55%;
+}
+.description-par{
+    font-family: var(--ff);
+    font-size: 28px;
+    line-height: 30px;
+    text-align: justify;
+    text-indent: 5%;
+}
+.to-results-or-not{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.continue-question, .description-decline-text{
+    font-family: var(--ff);
+    font-size: 24px;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.description-decline-text{
+    display: none;
+    margin-bottom: 0;
+}
+.description-buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#toAnswersDecline, #toAnswersAccept{
+    position: relative;
+    width: 20%;
+    height: 35px;
+    outline: none;
+    border-radius: 25px;
+    color: black;
+    transition: .4s ease-out;
+}
+#toAnswersDecline::after, #toAnswersAccept::after{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    content: '';
+    height: 30px;
+    width: 7px;
+    background-color: #d7d7db;
+    border: none;
+}
+#toAnswersDecline::before, #toAnswersAccept::before{
+    position: absolute;
+    left: 1px;
+    top: 0;
+    content: '';
+    height: 30px;
+    width: 49.9%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: #fff;
+    z-index: 2;
+}
+#toAnswersDecline{
+    border-color: #070c8f;
+    margin-right: 10px;
+    background-color: #4144f0;
+}
+#toAnswersAccept{
+    border-color: #ab0a0d;
+    background-color: #ed2626;
+}
+.text-med{
+    position: absolute;
+    top: 0px;
+    left: 30%;
+    font-family: var(--ff);
+    font-size: 24px;
+    z-index: 10;
+}
+#toAnswersDecline:hover{
+    box-shadow: 0px 0px 10px 4px rgba(3,118,176,1);
+    transform: scale(1.05);
+}
+#toAnswersAccept:hover{
+    box-shadow: 0px 0px 10px 4px rgba(242, 88, 82,1);
+    transform: scale(1.05);
+}
+
 
 
 
