@@ -10,6 +10,7 @@ const nextButton = document.querySelector('#nextPage'),
     toResults = document.querySelector('#toResults'),
     acceptNameButton = document.querySelector('#accept-modal');
 let input = document.querySelector('#getName');
+let checkedAll = 0;
 let answers = [];
 let result = '';
 let totalAnswers = [];
@@ -111,6 +112,9 @@ function prevQuestions() {
     for (let i = counter - 10; i < counter; i++) {
         drawedQuestions[i].style.display = 'flex';
     }
+    console.log(counter);
+    console.log(drawedQuestions.length);
+
 }
 
 function nextQuestions() {
@@ -159,11 +163,12 @@ function checkRadios() {
 function forwardOrWarn() {
     let getAllQuestionBlocksLength = document.querySelectorAll('.question-block').length;
     let getAllRadioButtons = document.querySelectorAll('input[type=radio]');
-    let checkedAll = 0;
 
     for (let i = 0; i < getAllRadioButtons.length; i++) {
         if (!getAllRadioButtons[i].checked) {
             checkedAll;
+        } else if (checkedAll % 10 == 0) {
+            break;
         } else {
             checkedAll += 1;
         }
@@ -201,7 +206,8 @@ function toResultsOrWarn() {
 }
 
 function countCorrectAnswers(arr) {
-    let totalSum = arr.reduce(function (sum, current) { return sum + current })
+    let totalSum = arr.reduce(function (sum, current) { return sum + current });
+    localStorage.setItem('CorrectAnswers', totalSum);
     return totalSum
 }
 
@@ -215,15 +221,15 @@ function getResults() {
         }
     }
     if (countCorrectAnswers(answers) <= 10) {
-        result += '0';
+        result = '0';
         localStorage.setItem('result', result);
     }
     if (countCorrectAnswers(answers) > 10 && countCorrectAnswers(answers) <= 30) {
-        result += '1';
+        result = '1';
         localStorage.setItem('result', result);
     }
     if (countCorrectAnswers(answers) > 40) {
-        result += '2';
+        result = '2';
         localStorage.setItem('result', result);
     }
 
