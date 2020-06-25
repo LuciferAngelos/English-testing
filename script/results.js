@@ -24,6 +24,8 @@ const questionMarkImage = document.querySelectorAll('.question-mark')
 
 // }
 
+
+//добавить вывод имени
 function displayGeneralResults() {
     for (let i = 0; i < images.length; i++) {
         images[i].style.display = 'none';

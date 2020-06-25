@@ -10,10 +10,10 @@ const nextButton = document.querySelector('#nextPage'),
     toResults = document.querySelector('#toResults'),
     acceptNameButton = document.querySelector('#accept-modal');
 let input = document.querySelector('#getName');
-let checkedAll = 0;
 let answers = [];
 let result = '';
 let totalAnswers = [];
+
 
 
 function getRandomDatas(arr1, arr2) {
@@ -112,9 +112,6 @@ function prevQuestions() {
     for (let i = counter - 10; i < counter; i++) {
         drawedQuestions[i].style.display = 'flex';
     }
-    console.log(counter);
-    console.log(drawedQuestions.length);
-
 }
 
 function nextQuestions() {
@@ -161,28 +158,32 @@ function checkRadios() {
 }
 
 function forwardOrWarn() {
-    let getAllQuestionBlocksLength = document.querySelectorAll('.question-block').length;
-    let getAllRadioButtons = document.querySelectorAll('input[type=radio]');
+    let getAllQuestionBlocks = document.querySelectorAll('.question-block');
+    let getAllRadioButtonsLength = document.querySelectorAll('input[type=radio]:checked').length;
+    let visibleQuestions = 0;
+    let checkedRadiosInQuestion = 0;
 
-    for (let i = 0; i < getAllRadioButtons.length; i++) {
-        if (!getAllRadioButtons[i].checked) {
-            checkedAll;
-        } else if (checkedAll % 10 == 0) {
-            break;
-        } else {
-            checkedAll += 1;
+    for (let i = 0; i < getAllQuestionBlocks.length; i++) {
+        if (window.getComputedStyle(getAllQuestionBlocks[i]).getPropertyValue('display') == 'flex') {
+            visibleQuestions += 1;
+            for (let j = 0; j < 4; j++) {
+                let currentQuestionRadio = getAllQuestionBlocks[i].querySelectorAll('form > div > label > input');
+                if (currentQuestionRadio[j].checked) {
+                    checkedRadiosInQuestion += 1;
+                    console.log(currentQuestionRadio[j]);
+
+                }
+            }
         }
     }
 
-    if (checkedAll == getAllQuestionBlocksLength || getAllQuestionBlocksLength == 50) {
-        nextQuestions()
+    if (visibleQuestions == checkedRadiosInQuestion) {
+        nextQuestions();
+        console.log(checkedRadiosInQuestion, visibleQuestions);
+
     } else {
         checkRadios();
     }
-
-
-
-    // nextQuestions(); //удалить после отладки выгрузки в локал сторейдж
 }
 
 function toResultsOrWarn() {
@@ -200,6 +201,7 @@ function toResultsOrWarn() {
 
     if (checkedAll == getAllQuestionBlocksLength) {
         getQuestionsAndAnswers()
+        location.href = '../results.htm'
     } else {
         checkRadios();
     }
