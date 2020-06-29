@@ -497,97 +497,10 @@ input[type='radio']{
 
 /* *** */
 
-/* Toggle classes and animation*/
-.uncheckedToggle{
-    color: var(--cr);
-}
-.markAsRed{
-    color: var(--cr);
-}
-.markAsGreen{
-    color: var(--cg);
-}
-.toggleDisplay{
-    display: none;
-}
-@-webkit-keyframes slideRight{
-    from{
-        display: flex;
-        transform: translate(0);
-    }
-    to{
-        display: none;
-        transform: translate(150%);
-    }
-}
-@keyframes slideRight{
-    from{
-        display: flex;
-        transform: translate(0);
-    }
-    to{
-        display: none;
-        transform: translate(150%);
-    }
-}
-@-webkit-keyframes slideLeft{
-    from{
-        display: flex;
-        transform: translate(0);
-    }
-    to{
-        display: none;
-        transform: translate(-150%);
-    }
-}
-@keyframes slideLeft{
-    from{
-        display: flex;
-        transform: translate(0);
-    }
-    to{
-        display: none;
-        transform: translate(-150%);
-    }
-}
-@-webkit-keyframes slideTop{
-    from{
-        display: flex;
-        transform: translate(0);
-    }
-    to{
-        display: none;
-        transform: translateY(-650%);
-    }
-}
-@keyframes slideTop{
-    from{
-        display: flex;
-        transform: translate(0);
-    }
-    to{
-        display: none;
-        transform: translateY(-650%);
-    }
-}
-.slideToLeft{
-    -webkit-animation: slideLeft 2s ease-in;
-            animation: slideLeft 2s ease-in;
-}
-.slidetoRight{
-    -webkit-animation: slideRight 1.5s ease-in;
-            animation: slideRight 1.5s ease-in;
-}
-.slideToTop{
-    -webkit-animation: slideTop 1.5s ease-in;
-            animation: slideTop 1.5s ease-in;
-}
-/* *** */
-
 /* Results page */
 .wrapper{
     width: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -718,7 +631,7 @@ input[type='radio']{
 .questions-and-answers{
     width: 110%;
     height: 100%;
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
@@ -726,6 +639,7 @@ input[type='radio']{
     flex-wrap: wrap;
 }
 .question-and-answer-block{
+    position: relative;
     width: 48%;
     display: flex;
     flex-direction: column;    
@@ -746,60 +660,175 @@ input[type='radio']{
     width: 100%;
     min-height: 90px;
     font-family: var(--ff);
-    font-size: 1.1em;
+    font-size: 1.375em;
     text-align: justify;
 }
 .result-answers-block{
+    margin-top: 1%;
     width: 100%;
-    height: auto;
+    min-height: 70px;
     display: flex;
     flex-direction: column;
 }
 .result-answers{
     width: 100%;
     font-family: var(--ff);
-    font-size: 1.1em;
+    font-size: 1.2em;
     text-align: justify;
     margin-bottom: 10px;
 }
 #correct, #incorrect{
     font-family: var(--ff);
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin-right: 5px;
 }
+#correct{
+    color: var(--cg);
+}
+#incorrect{
+    color: var(--cr);
+}
 .explanation-block{
+    visibility: visible;
     margin-top: 1%;
     width: 100%;
-    height: 20%;
+    min-height: 100px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    transition: all .3s ease-out;
 }
 .question-mark{
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 80px;
     cursor: pointer;
 }
 .explanation-button{
-    height: 30px;
-    width: 30%;
+    height: 50px;
+    width: 45%;
     border-radius: 5px;
     border: none;
     background-color: rgba(32, 232, 229, 0.3);
     font-family: var(--ff);
-    font-size: 1em;
+    font-weight: 500;
+    font-size: 1.2em;
     cursor: pointer;
 }
 .explanation{
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+    min-height: 30px;
+    line-height: 30px;
+    top: 60%;
     margin-top: 10px;
     width: 100%;
     font-family: var(--ff);
-    font-size: 1.1em;
+    font-size: 1.2em;
     text-align: justify;
     margin-bottom: 10px;
+    padding: 10px;
+    transform: translateY(-100%);
 }
 
+/* Toggle classes and animation*/
+.uncheckedToggle{
+    color: var(--cr);
+}
+.markAsRed{
+    color: var(--cr);
+}
+.markAsGreen{
+    color: var(--cg);
+}
+.toggleDisplay{
+    display: flex;
+}
+.toggleVisibilityPar{
+    visibility: visible;
+    transform: translateY(0);
+}
+.toggleVisibilityBlock{
+    visibility: hidden;
+    transform: translateX(-100%);
+}
 
+@-webkit-keyframes slideRight{
+    from{
+        display: flex;
+        transform: translate(0);
+    }
+    to{
+        display: none;
+        transform: translate(150%);
+    }
+}
+@keyframes slideRight{
+    from{
+        display: flex;
+        transform: translate(0);
+    }
+    to{
+        display: none;
+        transform: translate(150%);
+    }
+}
+@-webkit-keyframes slideLeft{
+    from{
+        display: flex;
+        transform: translate(0);
+    }
+    to{
+        display: none;
+        transform: translate(-150%);
+    }
+}
+@keyframes slideLeft{
+    from{
+        display: flex;
+        transform: translate(0);
+    }
+    to{
+        display: none;
+        transform: translate(-150%);
+    }
+}
+@-webkit-keyframes slideTop{
+    from{
+        display: flex;
+        transform: translate(0);
+    }
+    to{
+        display: none;
+        transform: translateY(-650%);
+    }
+}
+@keyframes slideTop{
+    from{
+        display: flex;
+        transform: translate(0);
+    }
+    to{
+        display: none;
+        transform: translateY(-700%);
+    }
+}
+.slideToLeft{
+    -webkit-animation: slideLeft 1.5s ease-in;
+            animation: slideLeft 1.5s ease-in;
+}
+.slidetoRight{
+    -webkit-animation: slideRight 1.5s ease-in;
+            animation: slideRight 1.5s ease-in;
+}
+.slideToTop{
+    -webkit-animation: slideTop 1.5s ease-in;
+            animation: slideTop 1.5s ease-in;
+}
+/* *** */
 
 
 /* *** */

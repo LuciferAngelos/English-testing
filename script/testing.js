@@ -159,7 +159,6 @@ function checkRadios() {
 
 function forwardOrWarn() {
     let getAllQuestionBlocks = document.querySelectorAll('.question-block');
-    let getAllRadioButtonsLength = document.querySelectorAll('input[type=radio]:checked').length;
     let visibleQuestions = 0;
     let checkedRadiosInQuestion = 0;
 
@@ -170,8 +169,6 @@ function forwardOrWarn() {
                 let currentQuestionRadio = getAllQuestionBlocks[i].querySelectorAll('form > div > label > input');
                 if (currentQuestionRadio[j].checked) {
                     checkedRadiosInQuestion += 1;
-                    console.log(currentQuestionRadio[j]);
-
                 }
             }
         }
@@ -179,8 +176,6 @@ function forwardOrWarn() {
 
     if (visibleQuestions == checkedRadiosInQuestion) {
         nextQuestions();
-        console.log(checkedRadiosInQuestion, visibleQuestions);
-
     } else {
         checkRadios();
     }
@@ -240,21 +235,31 @@ function getResults() {
 
 function getQuestionsAndAnswers() {
     let radioButtons = document.querySelectorAll('input[type=radio]');
+    let labels = document.querySelectorAll('div > label')
     let questions = document.querySelectorAll('.question');
     let answersCounter = 0;
 
 
     for (let i = 0; i < questions.length; i++) {
         totalAnswers.push([]);
-        totalAnswers[i].push(questions[i].textContent)
+        totalAnswers[i].push(questions[i].textContent);
+
+        for (let k = answersCounter; k < answersCounter + 4; k++) {
+            if (radioButtons[k].dataset.c % 17 == 0) {
+                totalAnswers[i].push(labels[k].textContent.trim());
+                break;
+            }
+        }
 
         for (let k = answersCounter; k < answersCounter + 4; k++) {
             if (radioButtons[k].checked) {
+                totalAnswers[i].push(labels[k].textContent.trim())
                 totalAnswers[i].push(radioButtons[k].dataset.c);
-                answersCounter += 4;
-                break
+                break;
             }
         }
+
+        answersCounter += 4;
     }
 
     localStorage.setItem('QuestionsAndAnswers', JSON.stringify(totalAnswers))
