@@ -9,13 +9,17 @@ const goodByePar = document.querySelector('.description-decline-text');
 const resultWrapper = document.querySelector('.wrapper');
 const questionsAndAnswersWrapper = document.querySelector('.questions-and-answers');
 const scrollToTopButton = document.querySelector('.to-top-button');
+const warnResults = document.querySelector('.without-results');
+const main = document.querySelector('main');
 let resultPar = document.querySelector('.user-result');
 let userAnswers = document.querySelector('.user-answers');
 let name = localStorage.getItem('name');
 let correctResults = localStorage.getItem('CorrectAnswers');
 let questionsAndAnswers = JSON.parse(localStorage.getItem('QuestionsAndAnswers'));
-let position
+let position;
 let timer;
+
+
 
 function displayGeneralResults() {
     for (let i = 0; i < images.length; i++) {
@@ -169,9 +173,52 @@ function render() {
     setTimeout(showQuestionsAndAnswers, 1500);
 }
 
+if (!localStorage.getItem('name')) {
+    let warnModal = document.querySelector('.warn');
+    warnModal.classList.add('active');
+    let acceptNameButton = document.querySelector('#accept-modal');
+    let input = document.querySelector('#getName');
+    let name = '';
+
+    main.style.display = 'none';
+    warnResults.style.display = 'none';
+    acceptNameButton.style.display = 'block';
+    input.addEventListener('keydown', function (e) {
+        if (this.value != '' && e.keyCode === 13) {
+            name = input.value;
+            localStorage.setItem('name', name);
+            warnModal.classList.remove('active');
+            location.href = '../testing.htm';
+        }
+    });
+
+    acceptNameButton.addEventListener('click', function () {
+        if (input.value != '') {
+            name = input.value;
+            localStorage.setItem('name', name);
+            warnModal.classList.remove('active');
+            location.href = '../testing.htm';
+        }
+    });
+}
+
+if (!localStorage.getItem('CorrectAnswers') && localStorage.getItem('name')) {
+    const toTestingPage = document.querySelector('#to-testing-page');
+    warnResults.style.display = 'flex';
+    main.style.display = 'none';
+
+    toTestingPage.addEventListener('click', function () {
+        location.href = '../testing.htm';
+    })
+} else {
+    displayGeneralResults();
+}
 
 
-displayGeneralResults();
+
+
+
+
 
 window.addEventListener('scroll', showToTopButton);
 scrollToTopButton.addEventListener('click', backToTop)

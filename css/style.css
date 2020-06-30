@@ -454,7 +454,7 @@ input[type='radio']{
     top: 40vh;
     margin: 0 auto;
     width: 50%;
-    height: 170px;
+    height: 200px;
     background: rgb(93,215,224);
     background: linear-gradient(90deg, rgba(93,215,224,1) 4%, rgba(193,235,227,1) 46%, rgba(0,212,255,1) 100%);
     border-radius: 10px;
@@ -468,8 +468,9 @@ input[type='radio']{
 .question_par{
     font-family: var(--ff);
     font-size: 24px;
-    padding-top: 15px;
+    padding: 15px 10px 0 10px;
     margin-bottom: 10px;
+    text-align: center;
 }
 .modal_buttons{
     width: 100%;
@@ -765,6 +766,42 @@ input[type='radio']{
     background-color: rgba(47, 189, 255, .4);
     transform: scale(1.1) rotate(-90deg);
 }
+.without-results{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.fun-404{
+    width: 90%;
+    font-family: var(--ff);
+    font-size: 10em;
+    text-align: center;
+    color: var(--cr);
+    margin-bottom: 15px;    
+}
+.warn-question{
+    width: 90%;
+    font-family: var(--ff);
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+#to-testing-page{
+    height: 2em;
+    width: 25%;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(94, 211, 219, 0.5);
+    font-family: var(--ff);
+    font-size: 1.5em;
+    margin-top: 5px;
+    transition: .3s linear;
+}
+#to-testing-page:hover{
+    background: linear-gradient(180deg, rgba(123, 133, 218, 0.272) 0%, rgba(193,235,227,0.10157566444546573) 25%, rgba(0,151,255,0.24163168685442926) 84%);
+}
+
 
 /* Toggle classes and animation*/
 .uncheckedToggle{
@@ -797,6 +834,7 @@ input[type='radio']{
     transform: translateX(-100%);
 }
 
+
 @-webkit-keyframes fadeIn{
     0%{
         opacity: 0;
@@ -806,7 +844,7 @@ input[type='radio']{
     }
 }
 
-/* @keyframes fadeIn{
+@keyframes fadeIn{
     0%{
         opacity: 0;
     }
@@ -814,16 +852,7 @@ input[type='radio']{
         opacity: 1;
     }
 }
-@-webkit-keyframes fadeOut{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        display: none;
-        opacity: 0;
-    }
-} */
-@-webkit-keyframes fadeOut{
+/* @-webkit-keyframes fadeOut{
     0%{
         opacity: 1;
     }
@@ -840,7 +869,7 @@ input[type='radio']{
         display: none;
         opacity: 0;
     }
-}
+} */
 @-webkit-keyframes slideRight{
     from{
         display: flex;
@@ -917,3 +946,4 @@ input[type='radio']{
 
 
 /* *** */
+}
