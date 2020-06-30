@@ -8,11 +8,14 @@ const declineButton = document.querySelector('#toAnswersDecline');
 const goodByePar = document.querySelector('.description-decline-text');
 const resultWrapper = document.querySelector('.wrapper');
 const questionsAndAnswersWrapper = document.querySelector('.questions-and-answers');
+const scrollToTopButton = document.querySelector('.to-top-button');
 let resultPar = document.querySelector('.user-result');
 let userAnswers = document.querySelector('.user-answers');
 let name = localStorage.getItem('name');
 let correctResults = localStorage.getItem('CorrectAnswers');
 let questionsAndAnswers = JSON.parse(localStorage.getItem('QuestionsAndAnswers'));
+let position
+let timer;
 
 function displayGeneralResults() {
     for (let i = 0; i < images.length; i++) {
@@ -58,15 +61,11 @@ function toggleExplanationDisplay() {
             explanationPar[i].style.transition = 'all .5s linear';
             explanationPar[i].classList.add('toggleVisibilityPar');
             explanationBlock[i].classList.add('toggleVisibilityBlock');
-            console.log(1);
-
         });
         explanationButtons[i].addEventListener('click', function () {
             explanationPar[i].style.transition = 'all .5s linear';
             explanationPar[i].classList.add('toggleVisibilityPar');
             explanationBlock[i].classList.add('toggleVisibilityBlock');
-            console.log(1);
-
         })
     }
 }
@@ -141,6 +140,30 @@ function showQuestionsAndAnswers() {
     toggleExplanationDisplay();
 }
 
+function showToTopButton() {
+    position = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (position > 1200) {
+        scrollToTopButton.classList.add('showBlock');
+    } else {
+        scrollToTopButton.classList.remove('showBlock');
+    }
+}
+
+function backToTop() {
+    if (position > 0) {
+        window.scrollTo(0, position);
+        position -= 200;
+        timer = setTimeout(backToTop, 10)
+    } else {
+        clearTimeout(timer);
+        window.scrollTo(0, 0)
+    }
+
+    console.log(position);
+
+}
+
 function render() {
     hideWrapper();
     setTimeout(showQuestionsAndAnswers, 1500);
@@ -150,6 +173,7 @@ function render() {
 
 displayGeneralResults();
 
-
+window.addEventListener('scroll', showToTopButton);
+scrollToTopButton.addEventListener('click', backToTop)
 declineButton.addEventListener('click', declineButtonTrigger);
 acceptButton.addEventListener('click', render);

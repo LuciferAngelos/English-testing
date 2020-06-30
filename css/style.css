@@ -366,7 +366,7 @@ footer div{
     height: 250px;
     display: flex;
     flex-direction: column;    
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-start;
 }
 p.question{
@@ -388,8 +388,8 @@ p.question{
     min-height: 75px;
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 input[type='radio'], label{
@@ -733,11 +733,52 @@ input[type='radio']{
     padding: 10px;
     transform: translateY(-100%);
 }
+.to-top-button{
+    position: fixed;
+    right: 0.6%;
+    bottom: 7%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    border: 1px solid #8cccf1;
+    line-height: 2em;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-family: var(--ff);
+    font-size: 5em;
+    font-weight: 300;
+    background-color: rgba(47, 189, 255, .1);
+    color: rgb(36, 81, 100);
+    transform: rotate(-90deg);
+    transition: .5s all; 
+    opacity: 1;  
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.to-top-button:hover{
+    background-color: rgba(47, 189, 255, .4);
+    transform: scale(1.1) rotate(-90deg);
+}
 
 /* Toggle classes and animation*/
 .uncheckedToggle{
     color: var(--cr);
 }
+.showBlock{
+    display: flex;
+    -webkit-animation: fadeIn .5s linear;
+            animation: fadeIn .5s linear;
+}
+/* .hideBlock{
+    -webkit-animation: fadeOut .5s linear;
+            animation: fadeOut .5s linear;
+} */
 .markAsRed{
     color: var(--cr);
 }
@@ -756,6 +797,50 @@ input[type='radio']{
     transform: translateX(-100%);
 }
 
+@-webkit-keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* @keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        display: none;
+        opacity: 0;
+    }
+} */
+@-webkit-keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        display: none;
+        opacity: 0;
+    }
+}
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        display: none;
+        opacity: 0;
+    }
+}
 @-webkit-keyframes slideRight{
     from{
         display: flex;
