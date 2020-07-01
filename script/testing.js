@@ -9,6 +9,10 @@ const nextButton = document.querySelector('#nextPage'),
     prevButton = document.querySelector('#prevPage'),
     toResults = document.querySelector('#toResults'),
     acceptNameButton = document.querySelector('#accept-modal');
+const ifTestPassed = document.querySelector('.warn-if-test-passed');
+const testsBlock = document.querySelector('.tests')
+const toResultsFromTesting = document.querySelector('#to-results-from-testing'),
+    startTestingAgain = document.querySelector('#start-again');
 let input = document.querySelector('#getName');
 let answers = [];
 let result = '';
@@ -264,6 +268,21 @@ function getQuestionsAndAnswers() {
     localStorage.setItem('QuestionsAndAnswers', JSON.stringify(totalAnswers))
 }
 
+function goToResults() {
+    location.href = '../results.htm'
+}
+
+function repeatTesting() {
+    localStorage.removeItem('QuestionsAndAnswers');
+    localStorage.removeItem('CorrectAnswers');
+    localStorage.removeItem('result');
+
+    testsBlock.style.display = 'flex';
+    ifTestPassed.style.display = 'none';
+    toResultsFromTesting.style.display = 'none';
+    startTestingAgain.style.display = 'none';
+}
+
 
 renderQuestions();
 
@@ -287,10 +306,19 @@ if (!localStorage.getItem('name')) {
             warnModal.classList.remove('active');
         }
     })
-
 }
+
+if (localStorage.getItem('CorrectAnswers') && localStorage.getItem('name')) {
+    testsBlock.style.display = 'none';
+    ifTestPassed.style.display = 'flex';
+    toResultsFromTesting.style.display = 'block';
+    startTestingAgain.style.display = 'block';
+};
+
 
 
 nextButton.addEventListener('click', forwardOrWarn);
 prevButton.addEventListener('click', prevQuestions);
 toResults.addEventListener('click', getResults);
+toResultsFromTesting.addEventListener('click', goToResults);
+startTestingAgain.addEventListener('click', repeatTesting)
