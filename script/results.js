@@ -11,11 +11,18 @@ const questionsAndAnswersWrapper = document.querySelector('.questions-and-answer
 const scrollToTopButton = document.querySelector('.to-top-button');
 const warnResults = document.querySelector('.without-results');
 const main = document.querySelector('main');
+const clearOrBackToResults = document.querySelector('.clear-or-back-to-results');
+const backToGeneralResultsButton = document.querySelector('#back-to-general-results');
+const clearAndBackToTestsButton = document.querySelector('#clear-and-back-to-tests');
 let resultPar = document.querySelector('.user-result');
 let userAnswers = document.querySelector('.user-answers');
 let name = localStorage.getItem('name');
 let correctResults = localStorage.getItem('CorrectAnswers');
 let questionsAndAnswers = JSON.parse(localStorage.getItem('QuestionsAndAnswers'));
+let descriptionResults = document.querySelector('.description-result'),
+    currentImage = document.querySelector('.image-result'),
+    toResultsOrNot = document.querySelector('.to-results-or-not');
+let getAllRenderedQuestions;
 let position;
 let timer;
 
@@ -40,13 +47,8 @@ function declineButtonTrigger() {
 };
 
 function hideWrapper() {
-    let descriptionResults = document.querySelector('.description-result'),
-        currentImage = document.querySelector('.image-result'),
-        toResultsOrNot = document.querySelector('.to-results-or-not');
-
     currentImage.classList.add('slideToLeft');
     descriptionResults.classList.add('slidetoRight');
-
     toResultsOrNot.classList.add('slideToTop');
     setTimeout(() => {
         resultWrapper.style.display = 'none';
@@ -114,7 +116,7 @@ function renderQuestionsAndAnswers(question, correctAnswer, userAnswer, code, ex
 
         return questionsAndAnswersWrapper.insertAdjacentHTML('beforeend', questionAndAnswersFromTest);
 
-    }
+    };
 }
 
 function showQuestionsAndAnswers() {
@@ -142,6 +144,8 @@ function showQuestionsAndAnswers() {
         renderQuestionsAndAnswers(q, ca, ua, c, e, i);
     }
     toggleExplanationDisplay();
+
+    clearOrBackToResults.style.display = 'flex';
 }
 
 function showToTopButton() {
@@ -170,7 +174,31 @@ function backToTop() {
 
 function render() {
     hideWrapper();
-    setTimeout(showQuestionsAndAnswers, 1500);
+
+    if (getAllRenderedQuestions != undefined && getAllRenderedQuestions.length == 50) {
+        questionsAndAnswersWrapper.style.display = 'flex';
+        clearOrBackToResults.style.display = 'flex';
+        resultWrapper.style.display = 'none';
+    } else {
+        setTimeout(showQuestionsAndAnswers, 1500);
+    }
+}
+
+function clearLSandBackToresults() {
+    localStorage.removeItem('QuestionsAndAnswers');
+    localStorage.removeItem('CorrectAnswers');
+    localStorage.removeItem('result');
+    location.href = '../testing.htm'
+}
+
+function showGeneralResults() {
+    getAllRenderedQuestions = document.querySelectorAll('.question-and-answer-block');
+    currentImage.classList.remove('slideToLeft');
+    descriptionResults.classList.remove('slidetoRight');
+    toResultsOrNot.classList.remove('slideToTop');
+    questionsAndAnswersWrapper.style.display = 'none';
+    clearOrBackToResults.style.display = 'none';
+    resultWrapper.style.display = 'flex';
 }
 
 if (!localStorage.getItem('name')) {
@@ -214,13 +242,9 @@ if (!localStorage.getItem('CorrectAnswers') && localStorage.getItem('name')) {
     displayGeneralResults();
 }
 
-
-
-
-
-
-
 window.addEventListener('scroll', showToTopButton);
 scrollToTopButton.addEventListener('click', backToTop)
 declineButton.addEventListener('click', declineButtonTrigger);
 acceptButton.addEventListener('click', render);
+backToGeneralResultsButton.addEventListener('click', showGeneralResults)
+clearAndBackToTestsButton.addEventListener('click', clearLSandBackToresults);

@@ -615,7 +615,7 @@ input[type='radio']{
 }
 .text-med{
     position: absolute;
-    top: 0px;
+    top: 5%;
     left: 30%;
     font-family: var(--ff);
     font-size: 24px;
@@ -801,6 +801,43 @@ input[type='radio']{
 #to-testing-page:hover{
     background: linear-gradient(180deg, rgba(123, 133, 218, 0.272) 0%, rgba(193,235,227,0.10157566444546573) 25%, rgba(0,151,255,0.24163168685442926) 84%);
 }
+.clear-or-back-to-results{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+.end-question{
+    width: 80%;
+    font-family: var(--ff);
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.choose-buttons{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+#back-to-general-results, #clear-and-back-to-tests{
+    height: 2em;
+    width: 40%;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(192, 235, 238, 0.7);
+    font-family: var(--ff);
+    font-size: 1.5em;
+    margin-top: 5px;
+    transition: .3s linear;
+    margin-right: 1em;
+}
+#back-to-general-results:hover, #clear-and-back-to-tests:hover{
+    background: linear-gradient(180deg, rgba(123, 133, 218, 0.272) 0%, rgba(193,235,227,0.10157566444546573) 25%, rgba(0,151,255,0.24163168685442926) 84%);
+}
+
 
 
 /* Toggle classes and animation*/
@@ -944,6 +981,7 @@ input[type='radio']{
 }
 /* *** */
 
+/* Media adaptive */
+
 
 /* *** */
-}
