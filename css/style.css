@@ -594,8 +594,9 @@ input[type='radio']{
 }
 .text-med{
     position: absolute;
-    top: 5%;
-    left: 30%;
+    width: 100%;
+    top: 1%;
+    left: 0;
     font-family: var(--ff);
     font-size: 24px;
     z-index: 10;
