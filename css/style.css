@@ -143,10 +143,6 @@ ul{
     text-align: center;
     margin-bottom: 5px;
 }
-.first-ul:before{
-    content: '';
-    background: url(/images/neanderthal.png) no-repeat left;
-}
 li{
     height: auto;
     font-family: var(--ff);
@@ -156,13 +152,13 @@ li{
     text-align: justify;
 }
 .test-advantage li{
-    background-image: url(./images/check.png) no-repeat left;
+    background: url(../images/check.png) no-repeat left;
 }
 .marked1{
-    background-image: url(./images/question.png) no-repeat left;
+    background: url(../images/question.png) no-repeat left;
 }
 .marked2{
-    background-image: url(./images/exclamation.png) no-repeat left top;
+    background: url(../images/exclamation.png) no-repeat left top;
 }
 h1{
     height: auto;
