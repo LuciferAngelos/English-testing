@@ -156,13 +156,13 @@ li{
     text-align: justify;
 }
 .test-advantage li{
-    background: url(/images/check.png) no-repeat left;
+    background: url(./images/check.png) no-repeat left;
 }
 .marked1{
-    background: url(/images/question.png) no-repeat left;
+    background: url(./images/question.png) no-repeat left;
 }
 .marked2{
-    background: url(/images/exclamation.png) no-repeat left top;
+    background: url(./images/exclamation.png) no-repeat left top;
 }
 h1{
     height: auto;
