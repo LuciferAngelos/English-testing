@@ -106,7 +106,7 @@ function renderQuestionsAndAnswers(question, correctAnswer, userAnswer, code, ex
                     <p class="result-question">${question[counter]}</p>
                     ${showAnswers(correctAnswer, userAnswer, code, counter)}
                     <div class="explanation-block">
-                        <img class="question-mark" src="/images/question_mark.png" alt="Whyyyy?">
+                        <img class="question-mark" src="./images/question_mark.png" alt="Whyyyy?">
                         <button class="explanation-button">Почему так?</button>
                     </div>
                     <p class="explanation">${explanation[counter]}
@@ -167,9 +167,6 @@ function backToTop() {
         clearTimeout(timer);
         window.scrollTo(0, 0)
     }
-
-    console.log(position);
-
 }
 
 function render() {
