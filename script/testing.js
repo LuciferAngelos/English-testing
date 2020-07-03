@@ -199,7 +199,7 @@ function toResultsOrWarn() {
 
     if (checkedAll == getAllQuestionBlocksLength) {
         getQuestionsAndAnswers()
-        location.href = '../results.htm'
+        location.href = './results.htm'
     } else {
         checkRadios();
     }
@@ -269,7 +269,7 @@ function getQuestionsAndAnswers() {
 }
 
 function goToResults() {
-    location.href = '../results.htm'
+    location.href = './results.htm'
 }
 
 function repeatTesting() {

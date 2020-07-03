@@ -185,7 +185,7 @@ function clearLSandBackToresults() {
     localStorage.removeItem('QuestionsAndAnswers');
     localStorage.removeItem('CorrectAnswers');
     localStorage.removeItem('result');
-    location.href = '../testing.htm'
+    location.href = './testing.htm'
 }
 
 function showGeneralResults() {
@@ -213,7 +213,7 @@ if (!localStorage.getItem('name')) {
             name = input.value;
             localStorage.setItem('name', name);
             warnModal.classList.remove('active');
-            location.href = '../testing.htm';
+            location.href = './testing.htm';
         }
     });
 
@@ -222,7 +222,7 @@ if (!localStorage.getItem('name')) {
             name = input.value;
             localStorage.setItem('name', name);
             warnModal.classList.remove('active');
-            location.href = '../testing.htm';
+            location.href = './testing.htm';
         }
     });
 }
@@ -233,7 +233,7 @@ if (!localStorage.getItem('CorrectAnswers') && localStorage.getItem('name')) {
     main.style.display = 'none';
 
     toTestingPage.addEventListener('click', function () {
-        location.href = '../testing.htm';
+        location.href = './testing.htm';
     })
 } else {
     displayGeneralResults();
