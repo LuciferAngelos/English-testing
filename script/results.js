@@ -25,6 +25,9 @@ let descriptionResults = document.querySelector('.description-result'),
 let getAllRenderedQuestions;
 let position;
 let timer;
+let version = document.querySelector('#version');
+
+version.innerText = localStorage.getItem('version');
 
 
 

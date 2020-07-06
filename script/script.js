@@ -3,6 +3,9 @@ let input = document.querySelector('#getName');
 let cancel = document.querySelector('#cancel');
 let accept = document.querySelector('#accept');
 let backToNameInput = document.querySelector('#back-to-input');
+let version = document.querySelector('#version');
+
+version.innerText = localStorage.getItem('version');
 
 if (localStorage.getItem('name')) {
     input.value = localStorage.getItem('name');

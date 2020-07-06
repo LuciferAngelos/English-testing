@@ -14,11 +14,13 @@ const testsBlock = document.querySelector('.tests')
 const toResultsFromTesting = document.querySelector('#to-results-from-testing'),
     startTestingAgain = document.querySelector('#start-again');
 let input = document.querySelector('#getName');
+let version = document.querySelector('#version');
 let answers = [];
 let result = '';
 let totalAnswers = [];
 
-//добавить проверку на то, что уже есть запись о вопросах и ответах
+version.innerText = localStorage.getItem('version');
+
 function getRandomDatas(arr1, arr2) {
     let rand = Math.floor(Math.random() * (arr1.length));
     let splicedCodes = arr1.splice(rand, 1);
