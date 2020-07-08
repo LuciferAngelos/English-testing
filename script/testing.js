@@ -19,7 +19,7 @@ let answers = [];
 let result = '';
 let totalAnswers = [];
 
-version.innerText = localStorage.getItem('version');
+version.innerText = localStorage.getItem('version') || 'Version?';
 
 function getRandomDatas(arr1, arr2) {
     let rand = Math.floor(Math.random() * (arr1.length));
