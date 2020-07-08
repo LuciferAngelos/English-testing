@@ -1313,7 +1313,7 @@ input[type='radio']{
     right: 0;
     bottom: 0;
     overflow: hidden;
-    background: #dff7f7e0;
+    background: url('../images/background-preloader.jpg') no-repeat center;
     z-index: 1001;
   }
 
