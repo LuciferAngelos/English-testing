@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
     document.body.classList.add('loaded_hiding');
     window.setTimeout(function () {
         document.body.classList.add('loaded');
