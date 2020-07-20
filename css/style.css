@@ -899,6 +899,7 @@ input[type='radio']{
 }
 .question-and-answer-block{
     position: relative;
+    max-height: 5%;
     width: 48%;
     display: -webkit-box;
     display: -ms-flexbox;
