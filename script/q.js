@@ -1,153 +1,153 @@
 export const questions = [
     {
-        '1': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Fuga rerum libero dicta veniam tenetur sunt!'
+        '1': 'Выберите наиболее подходящий ответ! “What does your husband do?”'
     },
     {
-        '2': 'Repellat voluptas fugit harum consequuntur voluptatibus quis ratione repellendus, ex nobis'
+        '2': 'Что такое альтернативный вопрос в английском языке?'
     },
     {
-        '3': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '3': 'We ... a big party yesterday.'
     },
     {
-        '4': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '4': 'Найдите неправильный глагол: to play, to smile, to laugh, to see.'
     },
     {
-        '5': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '5': 'При помощи какого суффикса может образовываться наречие в английском языке? От какой части речи?'
     },
     {
-        '6': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '6': 'Укажите существительное, имеющее неправильную форму множественного числа.'
     },
     {
-        '7': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '7': 'Найдите ошибку в трёх формах глагола:'
     },
     {
-        '8': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '8': 'Выберите наиболее подходящий ответ! “What is she doing?”'
     },
     {
-        '9': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '9': 'Как совершается действие, выраженное глаголом в Present Continuous?'
     },
     {
-        '10': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '10': 'John never minds ................. the movie again.'
     },
     {
-        '11': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '11': 'I couldn’t help ................. .'
     },
     {
-        '12': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '12': 'Можно мне взять Ваш карандаш?'
     },
     {
-        '13': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '13': 'Марта никогда не слышала, как он говорит по-английски.'
     },
     {
-        '14': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '14': 'Я знаю его четыре года.'
     },
     {
-        '15': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '15': 'В каком из представленных ниже слов звук, который передаётся буквой «a», отличается от остальных:'
     },
     {
-        '16': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '16': 'I have ................. butter, please, buy some.'
     },
     {
-        '17': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '17': 'The taxi ................. by 7 o’clock yesterday.'
     },
     {
-        '18': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '18': 'Должно быть, он продал свою машину.'
     },
     {
-        '19': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '19': 'Я хочу, чтобы погода была хорошая.'
     },
     {
-        '20': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '20': 'Какой же он умный мальчик!'
     },
     {
-        '21': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '21': 'Найдите неправильное предложение:'
     },
     {
-        '22': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '22': 'Какое из перечисленных ниже предложений нельзя перевести на русский язык как «Я читаю»?'
     },
     {
-        '23': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '23': 'When Kate ................. at Pier 90, it was crowded with football fans.'
     },
     {
-        '24': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '24': 'There was no one to cheer him ................. .'
     },
     {
-        '25': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '25': 'Could you possibly give me ................. ?'
     },
     {
-        '26': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '26': 'Marvin asked me ................. .'
     },
     {
-        '27': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '27': 'The accident happened ................. our way home.'
     },
     {
-        '28': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '28': 'If he were not so absent-minded, he ................. you for your sister (yesterday).'
     },
     {
-        '29': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '29': 'If Mike lived in the country house, he ................. happier.'
     },
     {
-        '30': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '30': '................. that weird man sitting over there?'
     },
     {
-        '31': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '31': 'How long ................. his house?'
     },
     {
-        '32': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '32': 'Ron has made up his ................. to become a teacher.'
     },
     {
-        '33': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '33': 'If Deborah ................. to dinner tomorrow, I`ll be happy.'
     },
     {
-        '34': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '34': 'Ask somebody for ................. occupation.'
     },
     {
-        '35': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '35': 'Kids shouldn`t take those pills, and ................. .'
     },
     {
-        '36': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '36': 'The doctor ................. me that there would be no pain.'
     },
     {
-        '37': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '37': 'I am looking for an ................. method of heating.'
     },
     {
-        '38': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '38': 'We try to be ................. to the needs of the customer.'
     },
     {
-        '39': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '39': 'An obstetrician/gynecologist at the pre-conception clinic suggests we ................. some further tests.'
     },
     {
-        '40': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '40': 'This particular college has a very selective ................. policy.'
     },
     {
-        '41': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '41': 'These machines ................. .'
     },
     {
-        '42': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '42': 'I like this song.'
     },
     {
-        '43': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '43': 'I was in America ................. three weeks'
     },
     {
-        '44': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '44': 'Выберите верное'
     },
     {
-        '45': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '45': 'I didn’t speak to ................. .'
     },
     {
-        '46': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '46': 'English ................. all over the world.'
     },
     {
-        '47': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '47': 'She’s ................. than I am.'
     },
     {
-        '48': 'Unde culpa quae animi perferendis, repellat tempora facilis fugiat eligendi'
+        '48': '................. people over there are German'
     },
     {
-        '49': 'Ullam error numquam quos accusamus aperiam iure non quammpariatur earum. !'
+        '49': 'I enjoy ................. early.'
     },
     {
-        '50': 'Fugit hic vitae odio eos eveniet laudantium, voluptatibus ipsum facere?'
+        '50': 'If only .......... time to do a bit more sightseeing.'
     }
 
 ]
