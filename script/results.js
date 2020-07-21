@@ -2,7 +2,7 @@ import { answers as answers } from './a.js'
 
 const images = document.querySelectorAll('.current-image');
 const paragraphs = document.querySelectorAll('.description-par');
-const possibleReults = ['Low!', 'Medium!', 'High!'];
+const possibleReults = ['Elementary!', 'Pre-intermediate!', 'Intermediate!', 'Upper-intermediate!', 'Advanced'];
 const acceptButton = document.querySelector('#toAnswersAccept');
 const declineButton = document.querySelector('#toAnswersDecline');
 const goodByePar = document.querySelector('.description-decline-text');

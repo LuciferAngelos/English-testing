@@ -226,12 +226,20 @@ function getResults() {
         result = '0';
         localStorage.setItem('result', result);
     }
-    if (countCorrectAnswers(answers) > 10 && countCorrectAnswers(answers) <= 30) {
+    if (countCorrectAnswers(answers) > 10 && countCorrectAnswers(answers) <= 20) {
         result = '1';
         localStorage.setItem('result', result);
     }
-    if (countCorrectAnswers(answers) > 40) {
+    if (countCorrectAnswers(answers) > 20 && countCorrectAnswers(answers) <= 30) {
         result = '2';
+        localStorage.setItem('result', result);
+    }
+    if (countCorrectAnswers(answers) > 30 && countCorrectAnswers(answers) <= 40) {
+        result = '3';
+        localStorage.setItem('result', result);
+    }
+    if (countCorrectAnswers(answers) > 40) {
+        result = '4';
         localStorage.setItem('result', result);
     }
 
