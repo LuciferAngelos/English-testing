@@ -19,7 +19,7 @@ export const variants = [
     { " 252 ": "It must be that he has sold his car.", " 270 ": "He must sold his car.", " 288 ": "He should have solden his car.", " 306 ": "He must have sold his car." },
     { " 266 ": "I want that the weather will be fine.", " 285 ": "I want the weather be fine.", " 304 ": "I want the weather being fine.", " 323 ": "I want the weather to be fine." },
     { " 280 ": "What an intelligent boy is he!", " 300 ": "What the intelligent boy is he!", " 320 ": "What the intelligent boy he is!", " 340 ": "What an intelligent boy he is!" },
-    { " 294 ": "Though it was 9 pm, there weren't many people.", " 315 ": "Although it is 9 pm, there arn't many people.", " 336 ": "It was only 9 am, and there were too many people.", " 357 ": "Through it was 8 am, there weren’t many people." },
+    { " 294 ": "Though it was 9pm, there weren't many people", " 315 ": "Although it is 9pm, there aren't many people", " 336 ": "It was only 9am, and there were too many people", " 357 ": "Through it was 8am, there weren’t many people" },
     { " 308 ": "I read magazines every day.", " 330 ": "I am reading a book.", " 352 ": "I have been reading the magazine for two hours.", " 374 ": "Все варианты подходят." },
     { " 322 ": "achieved", " 345 ": "entered", " 368 ": "reached", " 391 ": "arrived" },
     { " 336 ": "on", " 360 ": "in", " 384 ": "over", " 408 ": "up" },

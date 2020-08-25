@@ -114,7 +114,7 @@ export const answers = [
         '38': 'Responsible – ответственный/несущий ответственность за что-то. Responsive – используют в значении «отвечать» или «реагировать».'
     },
     {
-        '39': 'Глагол "to suggest" никогда не следует инфинитив. Есть две основные модели: 1) to suggest + gerund, e.g. I suggest doing something. 2) to suggest + (that) + subject + (should) + bare infinitive, e.g. I suggest (that) you (should) do something.'
+        '39': 'После глагола "to suggest" никогда не следует инфинитив. Есть две основные модели: 1) to suggest + gerund, e.g. I suggest doing something. 2) to suggest + (that) + subject + (should) + bare infinitive, e.g. I suggest (that) you (should) do something.'
     },
     {
         '40': 'Admissions policy - политика приема'
